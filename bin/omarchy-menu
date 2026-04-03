@@ -317,10 +317,8 @@ show_install_menu() {
 }
 
 show_install_service_menu() {
-  case $(menu "Install" "  Dropbox\n  Tailscale\n󱇱  NordVPN [AUR]\n󰏖  ONCE\n󰟵  Bitwarden\n  Chromium Account") in
-  *Dropbox*) present_terminal omarchy-install-dropbox ;;
+  case $(menu "Install" "  Tailscale\n󰏖  ONCE\n󰟵  Bitwarden\n  Chromium Account") in
   *Tailscale*) present_terminal omarchy-install-tailscale ;;
-  *NordVPN*) present_terminal omarchy-install-nordvpn ;;
   *ONCE*) present_terminal omarchy-install-once ;;
   *Bitwarden*) install_and_launch "Bitwarden" "bitwarden bitwarden-cli" "bitwarden" ;;
   *Chromium*) present_terminal omarchy-install-chromium-google-account ;;
@@ -329,8 +327,7 @@ show_install_service_menu() {
 }
 
 show_install_editor_menu() {
-  case $(menu "Install" "  VSCode\n  Cursor\n  Zed\n  Sublime Text\n  Helix\n  Emacs") in
-  *VSCode*) present_terminal omarchy-install-vscode ;;
+  case $(menu "Install" "  Cursor\n  Zed\n  Sublime Text\n  Helix\n  Emacs") in
   *Cursor*) install_and_launch "Cursor" "cursor-bin" "cursor" ;;
   *Zed*) install_and_launch "Zed" "zed" "dev.zed.Zed" ;;
   *Sublime*) install_and_launch "Sublime Text" "sublime-text-4" "sublime_text" ;;
@@ -366,9 +363,7 @@ show_install_ai_menu() {
 }
 
 show_install_gaming_menu() {
-  case $(menu "Install" "  Steam\n󰢹  NVIDIA GeForce NOW\n  RetroArch [AUR]\n󰍳  Minecraft\n󰖺  Xbox Controller [AUR]") in
-  *Steam*) present_terminal omarchy-install-steam ;;
-  *GeForce*) present_terminal omarchy-install-geforce-now ;;
+  case $(menu "Install" "  RetroArch [AUR]\n󰍳  Minecraft\n󰖺  Xbox Controller [AUR]") in
   *RetroArch*) aur_install_and_launch "RetroArch" "retroarch retroarch-assets libretro libretro-fbneo" "com.libretro.RetroArch.desktop" ;;
   *Minecraft*) install_and_launch "Minecraft" "minecraft-launcher" "minecraft-launcher" ;;
   *Xbox*) present_terminal omarchy-install-xbox-controllers ;;
